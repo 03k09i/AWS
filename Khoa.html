@@ -276,7 +276,7 @@
     {
         $.ajax({
             type: "GET",
-            url: "http://3.93.40.100:8080/khoa", //Tên servlet
+            url: "http://18.215.126.43:8080/khoa", //Tên servlet
             success:function (result){
                 console.log(result)
                 var row = document.getElementById("row1")
@@ -287,25 +287,25 @@
                 {
                     var total1=item-'-1'
                     let total2=total-item-1
-                htmlString+=`<tr>
-                                <th scope="row"> `+(total1)+`</th>
-                                <td>`+result[total2].MaKhoa+`</td>
-                                <td>`+result[total2].TenKhoa+`</td>
-                                
-                                <td class="text-center">
-                                    <!-- Button EDIT-->
-                                    <button type="button" class="btn btn-outline-danger py-1" onclick="Load1('`+result[total2].MaKhoa+`')" data-bs-toggle="modal"
-                                        data-bs-target="#edit-modal"><i class='bx bx-pen'></i> Sửa
-                                    </button>
-                                    <!-- Button DELETE -->
-                                    <button type="button" class="btn btn-outline-warning py-1" onclick="Load2('`+result[total2].MaKhoa+`')" data-bs-toggle="modal"
-                                        data-bs-target="#staticBackdrop">
-                                        <i class='bx bx-x'></i>Xóa
-                                    </button>
-                                </td>
-                            </tr>`
-                            $('#row1').html(htmlString);
-                        }
+                    htmlString+=`<tr>
+                                    <th scope="row"> `+(total1)+`</th>
+                                    <td>`+result[total2].MaKhoa+`</td>
+                                    <td>`+result[total2].TenKhoa+`</td>
+                                    
+                                    <td class="text-center">
+                                        <!-- Button EDIT-->
+                                        <button type="button" class="btn btn-outline-danger py-1" onclick="Load1('`+result[total2].MaKhoa+`')" data-bs-toggle="modal"
+                                            data-bs-target="#edit-modal"><i class='bx bx-pen'></i> Sửa
+                                        </button>
+                                        <!-- Button DELETE -->
+                                        <button type="button" class="btn btn-outline-warning py-1" onclick="Load2('`+result[total2].MaKhoa+`')" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop">
+                                            <i class='bx bx-x'></i>Xóa
+                                        </button>
+                                    </td>
+                                </tr>`
+                                $('#row1').html(htmlString);
+                            }
             }
         })
     }
@@ -320,7 +320,7 @@
         var b=document.getElementById("TenKhoa").value;
         $.ajax({
             type: "POST",
-            url: "http://3.93.40.100:8080/khoa", //Tên servlet
+            url: "http://18.215.126.43:8080/khoa", //Tên servlet
             data: {"MaKhoa":a,"TenKhoa":b},
         })
     }
@@ -331,7 +331,7 @@
     {
         $.ajax({
             type: "Get",
-            url: "http://3.93.40.100:8080/khoa/"+data, //Tên servlet
+            url: "http://18.215.126.43:8080/khoa/"+data, //Tên servlet
             success:function (result){
                 document.getElementById('MaKhoa1').value=''
                 document.getElementById('TenKhoa1').value=''
@@ -361,7 +361,7 @@
         var b=document.getElementById("TenKhoa1").value;
         $.ajax({
             type: "PUT",
-            url: "http://3.93.40.100:8080/khoa/"+a, //Tên servlet
+            url: "http://18.215.126.43:8080/khoa/"+a, //Tên servlet
             data: {"TenKhoa":b}
         })
     }
@@ -369,7 +369,7 @@
     {
         $.ajax({
             type: "Delete",
-            url: "http://3.93.40.100:8080/khoa/"+data, //Tên servlet
+            url: "http://18.215.126.43:8080/khoa/"+data, //Tên servlet
         })
     }
 </script>
